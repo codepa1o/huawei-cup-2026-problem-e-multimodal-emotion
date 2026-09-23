@@ -1,4 +1,4 @@
-"""Audit the 100 source clips without modifying the contest files."""
+"""阶段0：以标注表为准清点100条视频；只读原始附件，输出身份和媒体质量清单。"""
 
 from __future__ import annotations
 
@@ -29,6 +29,7 @@ FIELDS = (
 
 
 def sha256(path: Path) -> str:
+    """分块计算源文件哈希，供后续确认视频未被替换或改写。"""
     digest = hashlib.sha256()
     with path.open("rb") as file:
         for block in iter(lambda: file.read(1024 * 1024), b""):
@@ -37,6 +38,7 @@ def sha256(path: Path) -> str:
 
 
 def first_frame_time(path: Path, kind: str) -> float | None:
+    """实际解码首帧时间；流存在但无法解码时返回 None。"""
     with av.open(path) as container:
         streams = container.streams.video if kind == "video" else container.streams.audio
         if not streams:
@@ -48,6 +50,7 @@ def first_frame_time(path: Path, kind: str) -> float | None:
 
 
 def probe(path: Path) -> dict:
+    """分别记录容器流元数据和首帧可解码状态；两者不能混同。"""
     result = {
         "video_stream_status": "missing",
         "audio_stream_status": "missing",
@@ -96,6 +99,7 @@ def probe(path: Path) -> dict:
 
 
 def read_labels(path: Path) -> list[tuple[int, dict]]:
+    """只读Excel并保留字符串ID、原文和原标签，不做数值化或清洗。"""
     workbook = openpyxl.load_workbook(path, read_only=True, data_only=True)
     try:
         rows = workbook.active.iter_rows(values_only=True)
@@ -117,6 +121,7 @@ def read_labels(path: Path) -> list[tuple[int, dict]]:
 
 
 def main() -> int:
+    """按 video_id 与 clip_id 配对视频，保留每条异常而不删样本。"""
     if not SOURCE.is_dir():
         raise FileNotFoundError(SOURCE)
     labels = read_labels(SOURCE / CONFIG["sample"]["label_file"])
@@ -128,6 +133,7 @@ def main() -> int:
         if any(Path(part).name != part or "/" in part or "\\" in part for part in (video_id, clip_id)):
             raise ValueError(f"Unsafe ID in row {source_row}")
         sample_id = f"{video_id}{separator}{clip_id}"
+        # 采用双层相对路径：clip_id 单独使用时可能在不同 video_id 下重名。
         relative = Path(video_id) / f"{clip_id}.mp4"
         expected_paths.add(relative.as_posix())
         codes = []
@@ -174,6 +180,7 @@ def main() -> int:
                 issues.append({"sample_id": sample_id, "severity": "error", "issue_code": code,
                                "detail": relative.as_posix()})
         if isinstance(row["video_duration_s"], float):
+            # 题面时长范围仅用于提示；实际不足范围的样本仍保留并继续处理。
             low = CONFIG["time"]["stated_duration_min_s"]
             high = CONFIG["time"]["stated_duration_max_s"]
             if not low <= row["video_duration_s"] <= high:

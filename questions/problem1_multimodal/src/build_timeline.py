@@ -1,4 +1,4 @@
-"""Build source-time coordinates and align the supplied transcript to audio."""
+"""阶段1：以首个视频PTS为零点，建立三模态源时间轴并对给定转写做词级强制对齐。"""
 
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ WORD_PATTERN = re.compile(r"[A-Za-z]+(?:['’][A-Za-z]+)?|\d+(?:[.,]\d+)?")
 
 
 def acoustic_model() -> Path:
-    """PocketSphinx cannot open model files through this project's Unicode path."""
+    """PocketSphinx不能从本工程的中文路径加载模型，故复制到用户缓存的英文路径。"""
     source = Path(pocketsphinx.get_model_path()) / "en-us"
     target = Path.home() / ".cache" / "bzd_p1_models" / "en-us"
     if not target.is_dir():
@@ -37,6 +37,7 @@ def acoustic_model() -> Path:
 
 
 def video_times(path: Path) -> tuple[list[dict], float, float, list[str]]:
+    """读取真实视频帧PTS；共同轴T取流声明末端与实际解码末端的较大者。"""
     issues = []
     with av.open(path) as container:
         stream = container.streams.video[0]
@@ -51,6 +52,7 @@ def video_times(path: Path) -> tuple[list[dict], float, float, list[str]]:
         )
     if any(b[1] < a[1] for a, b in zip(raw, raw[1:])):
         issues.append("video_pts_nonmonotone")
+    # 流声明时长可能与解码帧覆盖不一致；保留较大T供跨模态索引，后续单独核查尾部。
     duration = max(stream_end - origin, max(t + frame_duration - origin for _, t, frame_duration in raw))
     frames = []
     for position, (index, pts, frame_duration) in enumerate(raw):
@@ -66,6 +68,7 @@ def video_times(path: Path) -> tuple[list[dict], float, float, list[str]]:
 
 
 def audio_samples(path: Path, origin: float) -> tuple[np.ndarray, float, int]:
+    """解码并重采样为16 kHz单声道，同时保留音频相对视频零点的起始偏移。"""
     target_rate = int(CONFIG["audio"]["pilot_sample_rate_hz"])
     samples = []
     first_pts = None
@@ -87,6 +90,7 @@ def audio_samples(path: Path, origin: float) -> tuple[np.ndarray, float, int]:
 
 
 def audio_frames(count: int, offset: float, rate: int, duration: float) -> list[dict]:
+    """按25 ms窗/10 ms步长建立声学帧时间；无声帧仍是有效观测。"""
     length = round(rate * CONFIG["audio"]["pilot_frame_length_ms"] / 1000)
     hop = round(rate * CONFIG["audio"]["pilot_hop_length_ms"] / 1000)
     frames = []
@@ -106,6 +110,7 @@ def audio_frames(count: int, offset: float, rate: int, duration: float) -> list[
 
 
 def align_words(text: str, pcm: np.ndarray, offset: float, duration: float, model: Path) -> tuple[list[dict], str, list[str]]:
+    """只对题目给定转写强制对齐；失败词保留空时间，不均匀捏造词时间。"""
     words = []
     for index, match in enumerate(WORD_PATTERN.finditer(text)):
         token = match.group()
@@ -132,6 +137,7 @@ def align_words(text: str, pcm: np.ndarray, offset: float, duration: float, mode
     issues = []
     for word in words:
         if decoder.lookup_word(word["normalized"]) is None:
+            # 词典外词不送入对齐器，但仍保留原文词序号和失败状态。
             word["alignment_status"] = "out_of_vocabulary"
             issues.append(f"oov:{word['normalized']}")
         else:
@@ -149,6 +155,7 @@ def align_words(text: str, pcm: np.ndarray, offset: float, duration: float, mode
     recognized = [re.sub(r"\(\d+\)$", "", segment.word).lower() for segment in segments]
     expected = [word["normalized"] for word in known]
     matches = difflib.SequenceMatcher(None, expected, recognized, autojunk=False).get_matching_blocks()
+    # 对齐器分段与原词不完全一致时，仅接纳精确匹配段；其余词继续缺时标。
     matched_count = sum(block.size for block in matches)
     if matched_count != len(known):
         issues.append(f"segment_count_or_text_mismatch:{matched_count}/{len(known)}")
@@ -170,6 +177,7 @@ def align_words(text: str, pcm: np.ndarray, offset: float, duration: float, mode
 
 
 def build(row: dict, model: Path) -> dict:
+    """合并视频帧、音频帧、词时间；质量问题以状态记录而非删除样本。"""
     path = SOURCE / row["relative_video_path"]
     frames, origin, duration, issues = video_times(path)
     pcm, offset, rate = audio_samples(path, origin)
@@ -198,6 +206,7 @@ def build(row: dict, model: Path) -> dict:
 
 
 def main() -> None:
+    """逐样本生成timeline；单条失败也留下可定位的状态记录。"""
     parser = argparse.ArgumentParser()
     parser.add_argument("--pilot", action="store_true", help="Run shortest, median, and longest clips")
     args = parser.parse_args()

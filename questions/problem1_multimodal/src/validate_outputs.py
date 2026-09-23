@@ -1,4 +1,4 @@
-"""Check the phase 0–2 data contract and prepare the 100-sample summary."""
+"""核验阶段0—4的身份、时间、特征、对齐映射与汇总数据契约。"""
 
 from __future__ import annotations
 
@@ -11,6 +11,8 @@ from pathlib import Path
 
 import numpy as np
 
+from align_50 import align_sample
+
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = tomllib.loads((ROOT / "project.toml").read_text(encoding="utf-8"))
@@ -21,11 +23,13 @@ TOLERANCE = CONFIG["time"]["frame_boundary_tolerance_s"]
 
 
 def read_csv(path: Path) -> list[dict]:
+    """读取阶段性 CSV，同时兼容写表时加入的 UTF-8 BOM。"""
     with path.open(encoding="utf-8-sig", newline="") as file:
         return list(csv.DictReader(file))
 
 
 def check_time(name: str, values: np.ndarray, duration: float, errors: list[str]) -> None:
+    """检查已知来源时间的形状、有限性和视频边界。"""
     if values.ndim != 2 or values.shape[1] != 2:
         errors.append(f"{name}: time array must have shape (N,2)")
         return
@@ -39,7 +43,86 @@ def check_time(name: str, values: np.ndarray, duration: float, errors: list[str]
         errors.append(f"{name}: time outside video or reversed")
 
 
+def check_aligned(manifest: list[dict], feature_rows: list[dict]) -> list[str]:
+    """从100条原始特征重算50窗，逐项比对数组、来源映射与总表。"""
+    errors = []
+    stage3 = OUTPUT / "stage3"
+    stage4 = OUTPUT / "stage4"
+    report_path = stage4 / "report.json"
+    feature_index = {row["sample_id"]: row for row in feature_rows}
+    summary = read_csv(stage4 / "summary_100.csv")
+    with (stage3 / "alignment.jsonl").open(encoding="utf-8") as file:
+        mapping = [json.loads(line) for line in file]
+    expected_mapping_count = len(manifest) * CONFIG["alignment"]["bins"]
+    if len(summary) != len(manifest) or len(mapping) != expected_mapping_count:
+        errors.append(f"aligned: expected {len(manifest)} summary and "
+                      f"{expected_mapping_count} mapping rows, got {len(summary)}/{len(mapping)}")
+    with np.load(stage3 / "features_aligned_50.npz", allow_pickle=False) as aligned:
+        expected_ids = [row["sample_id"] for row in manifest]
+        if aligned["sample_ids"].tolist() != expected_ids:
+            errors.append("aligned: sample IDs/order differ from manifest")
+        for sample_index, row in enumerate(manifest):
+            sample_id = row["sample_id"]
+            # 此处不是只检查文件能否打开，而是验证正式产物能由源数据复现。
+            expected_arrays, expected_maps, expected_summary = align_sample(
+                row, feature_index[sample_id]
+            )
+            for name, expected in expected_arrays.items():
+                if name not in aligned.files:
+                    errors.append(f"{sample_id}: missing aligned array {name}")
+                    continue
+                actual = aligned[name][sample_index]
+                if actual.shape != np.shape(expected) or (
+                    np.issubdtype(actual.dtype, np.number)
+                    and not np.isfinite(actual).all()
+                ):
+                    errors.append(f"{sample_id}: invalid {name} shape/numbers")
+                    continue
+                matches = (
+                    np.allclose(actual, expected, rtol=1e-5, atol=1e-5)
+                    if np.issubdtype(actual.dtype, np.floating)
+                    else np.array_equal(actual, expected)
+                )
+                if not matches:
+                    errors.append(f"{sample_id}: {name} differs from source-time recomputation")
+            for bin_index, expected in enumerate(expected_maps):
+                position = sample_index * CONFIG["alignment"]["bins"] + bin_index
+                if position >= len(mapping) or mapping[position] != expected:
+                    errors.append(f"{sample_id}: mapping differs at bin {bin_index}")
+                    break
+            if sample_index >= len(summary) or any(
+                summary[sample_index].get(key) != str(value)
+                for key, value in expected_summary.items()
+            ):
+                errors.append(f"{sample_id}: 100-sample summary differs from aligned inputs")
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    expected_report = {
+        "sample_count": len(summary),
+        "bin_count": CONFIG["alignment"]["bins"],
+        "mapping_count": len(mapping),
+        "stage3_statuses": dict(Counter(row["stage3_status"] for row in summary)),
+        "text_word_bins": sum(int(row["text_word_bins"]) for row in summary),
+        "text_clip_fallback_bins": sum(int(row["text_clip_fallback_bins"]) for row in summary),
+        "audio_observed_bins": sum(int(row["audio_observed_bins"]) for row in summary),
+        "vision_scene_bins": sum(int(row["vision_scene_bins"]) for row in summary),
+        "vision_face_bins": sum(int(row["vision_face_bins"]) for row in summary),
+        "feature_bytes": (stage3 / "features_aligned_50.npz").stat().st_size,
+        "mapping_bytes": (stage3 / "alignment.jsonl").stat().st_size,
+        "summary_bytes": (stage4 / "summary_100.csv").stat().st_size,
+    }
+    for name, expected in expected_report.items():
+        if report.get(name) != expected:
+            errors.append(f"aligned report: {name} differs from generated files")
+    report["validation_status"] = "passed" if not errors else "failed"
+    report["validation_errors"] = errors
+    report["validated_feature_files"] = len(manifest)
+    report["validated_mapping_rows"] = len(mapping)
+    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    return errors
+
+
 def main() -> int:
+    """执行全量硬校验并输出错误/警告；警告不等同于模型精度合格。"""
     manifest = read_csv(OUTPUT / "stage0" / "manifest.csv")
     timelines = read_csv(OUTPUT / "stage1" / "status.csv")
     features = read_csv(OUTPUT / "stage2" / "feature_index.csv")
@@ -166,6 +249,7 @@ def main() -> int:
             "feature_status": feature_row["status"],
             "issue_codes": source_row["issue_codes"],
         })
+    # 题面时长范围异常保留在源数据中，报告风险而不静默丢弃样本。
     for row in manifest:
         if "duration_outside_problem_statement" in row["issue_codes"]:
             warnings.append(f"{row['sample_id']}: media duration outside stated range")
@@ -192,6 +276,11 @@ def main() -> int:
         "errors": errors,
         "warnings": warnings,
     }
+    if not errors and (OUTPUT / "stage3" / "features_aligned_50.npz").is_file():
+        try:
+            errors.extend(check_aligned(manifest, features))
+        except Exception as error:
+            errors.append(f"aligned: validation could not complete: {type(error).__name__}: {error}")
     (target / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2),
                                         encoding="utf-8")
     print(json.dumps({key: value for key, value in report.items()
