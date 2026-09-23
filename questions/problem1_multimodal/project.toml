@@ -16,6 +16,9 @@ frame_boundary_tolerance_s = 0.02
 stated_duration_min_s = 2.648
 stated_duration_max_s = 34.567
 
+[alignment]
+bins = 50
+
 [audio]
 pilot_sample_rate_hz = 16000
 pilot_frame_length_ms = 25

@@ -1,4 +1,4 @@
-"""Extract word, acoustic-frame, and sampled-face features for stage 2."""
+"""阶段2：按阶段1的原始时间索引提取文本、音频和视觉特征。"""
 
 from __future__ import annotations
 
@@ -46,6 +46,7 @@ VISION_NAMES = (
 
 
 def sha256(path: Path) -> str:
+    """分块计算模型或产物的 SHA-256，便于复现实验。"""
     digest = hashlib.sha256()
     with path.open("rb") as file:
         for chunk in iter(lambda: file.read(1024 * 1024), b""):
@@ -54,6 +55,7 @@ def sha256(path: Path) -> str:
 
 
 def visual_model_path() -> Path:
+    """获取人脸模型，并在首次下载及后续复用时核对固定哈希。"""
     path = Path.home() / ".cache" / "bzd_p1_models" / "face_landmarker.task"
     path.parent.mkdir(parents=True, exist_ok=True)
     if not path.is_file():
@@ -71,6 +73,7 @@ def visual_model_path() -> Path:
 def text_features(
     text: str, words: list[dict], tokenizer, model
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray, bool]:
+    """整句编码后，以字符交叠把子词向量平均到原始词；另存整段向量。"""
     values = np.zeros((len(words), TEXT_DIM), dtype=np.float32)
     observed = np.zeros(len(words), dtype=np.bool_)
     encoded = tokenizer(
@@ -82,6 +85,7 @@ def text_features(
         token_values = model(**encoded).last_hidden_state[0].cpu().numpy()
     if token_values.shape[1] != TEXT_DIM:
         raise ValueError(f"Unexpected text dimension {token_values.shape[1]}")
+    # 排除没有文本跨度的特殊标记；整段向量不是任何词的精确时间标签。
     content_indices = [position for position, (left, right) in enumerate(offsets) if right > left]
     clip_value = (
         token_values[content_indices].mean(axis=0).astype(np.float32)
@@ -98,6 +102,7 @@ def text_features(
 
 
 def mel_filterbank(rate: int, n_fft: int, count: int) -> np.ndarray:
+    """构造逐行归一化的三角形 Mel 滤波器组。"""
     hz_to_mel = lambda hz: 2595.0 * np.log10(1.0 + hz / 700.0)
     mel_to_hz = lambda mel: 700.0 * (10.0 ** (mel / 2595.0) - 1.0)
     points = mel_to_hz(np.linspace(hz_to_mel(80), hz_to_mel(rate / 2), count + 2))
@@ -114,6 +119,7 @@ def mel_filterbank(rate: int, n_fft: int, count: int) -> np.ndarray:
 
 
 def audio_features(pcm: np.ndarray, frames: list[dict], rate: int) -> tuple[np.ndarray, np.ndarray]:
+    """每个25毫秒音频帧提取13维 MFCC 与5维声学统计量。"""
     if not frames:
         return np.zeros((0, AUDIO_DIM), np.float32), np.zeros(0, np.bool_)
     length = round(rate * CONFIG["audio"]["pilot_frame_length_ms"] / 1000)
@@ -143,6 +149,7 @@ def audio_features(pcm: np.ndarray, frames: list[dict], rate: int) -> tuple[np.n
     periodicity = autocorrelation[np.arange(len(frames)), peak_lags] / np.maximum(
         autocorrelation[:, 0], 1e-10
     )
+    # 有声标记仅供基频估计与后续统计，不等同于音频帧是否被成功观测。
     voiced = (rms >= CONFIG["audio"]["pitch_rms_min"]) & (
         periodicity >= CONFIG["audio"]["pitch_periodicity_min"]
     )
@@ -152,6 +159,7 @@ def audio_features(pcm: np.ndarray, frames: list[dict], rate: int) -> tuple[np.n
 
 
 def selected_video_frames(timeline: dict) -> list[dict]:
+    """按计划的5 Hz网格，选实际 PTS 最近且不重复的视频源帧。"""
     frames = timeline["video_frames"]
     if not frames:
         return []
@@ -168,6 +176,7 @@ def selected_video_frames(timeline: dict) -> list[dict]:
 def vision_features(
     path: Path, planned: list[dict], origin: float, model_path: Path, scene_model, scene_transform
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """提取52维人脸表情与576维全画面特征，并分别记录观测掩码。"""
     values = np.zeros((len(planned), VISION_DIM), dtype=np.float32)
     observed = np.zeros(len(planned), dtype=np.bool_)
     face_observed = np.zeros(len(planned), dtype=np.bool_)
@@ -188,6 +197,7 @@ def vision_features(
                 if index not in positions:
                     continue
                 position = positions[index]
+                # MediaPipe 视频模式要求毫秒时间戳严格递增；PTS 仍由阶段1保存。
                 timestamp = max(last_timestamp + 1, round((float(frame.time) - origin) * 1000))
                 last_timestamp = timestamp
                 image = mp.Image(
@@ -217,6 +227,7 @@ def vision_features(
 
 
 def build_sample(row: dict, tokenizer, model, face_model: Path, scene_model, scene_transform) -> dict:
+    """逐样本写原始时序 NPZ；失败模态留零值并写原因，不伪造观测。"""
     started = time.perf_counter()
     video_id, clip_id = row["video_id"], row["clip_id"]
     timeline_path = STAGE1 / "timelines" / video_id / f"{clip_id}.json"
@@ -227,6 +238,7 @@ def build_sample(row: dict, tokenizer, model, face_model: Path, scene_model, sce
     words = timeline["words"]
     audio_frames_list = timeline["audio_frames"]
     visual_plan = selected_video_frames(timeline)
+    # 未能定位到词级时间时写 -1 哨兵，是否有效由独立布尔掩码决定。
     text_time = np.array([
         [word["start_s"], word["end_s"]] if word["start_s"] is not None else [-1.0, -1.0]
         for word in words
@@ -270,6 +282,7 @@ def build_sample(row: dict, tokenizer, model, face_model: Path, scene_model, sce
         )
     except Exception as error:
         issues.append(f"vision:{type(error).__name__}:{error}")
+    # 全画面可正常提取而无人脸：保留全画面特征，同时标记待核查。
     if not face_observed.any():
         issues.append("vision:no_face_detected")
     if not vision_observed.all():
@@ -322,6 +335,7 @@ def build_sample(row: dict, tokenizer, model, face_model: Path, scene_model, sce
 
 
 def main() -> None:
+    """加载固定版本模型，按清单顺序批量提取并登记每条样本状态。"""
     parser = argparse.ArgumentParser()
     parser.add_argument("--pilot", action="store_true")
     args = parser.parse_args()
@@ -330,6 +344,7 @@ def main() -> None:
     ) as file:
         rows = list(csv.DictReader(file))
     if args.pilot:
+        # 短、中、长3条只用于试运行，索引单独命名，不替代正式全量结果。
         ordered = sorted(rows, key=lambda row: float(row["video_duration_s"]))
         rows = [ordered[0], ordered[len(ordered) // 2], ordered[-1]]
     face_model = visual_model_path()
