@@ -1,0 +1,24 @@
+# 所有相对路径均以本配置文件所在目录为基准，而非运行命令的位置。
+[paths]
+data_root = "../../../../E题数据"
+output = "../outputs"
+
+[encoder]
+model = "google-bert/bert-base-uncased"
+revision = "86b5e0934494bd15c9632b12f734a8a67f723594"
+batch_size = 8
+threads = 4
+
+[training]
+seed = 2026
+train_size = 256
+valid_size = 96
+overfit_size = 32
+overfit_steps = 200
+epochs = 2
+batch_size = 16
+hidden_dim = 64
+dropout = 0.1
+learning_rate = 0.001
+weight_decay = 0.0001
+clip_norm = 1.0

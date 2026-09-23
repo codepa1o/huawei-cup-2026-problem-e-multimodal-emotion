@@ -1,0 +1,27 @@
+# 独立配置，不改变阶段1—3已绑定的problem2.toml及完整特征缓存。
+base_config = "problem2.toml"
+output_root = "../outputs/stage4"
+version = "continuous-missing-v1"
+
+[missingness]
+mask_seed = 2026
+clean_fraction = 0.5
+modalities = ["T", "A", "V", "TA", "TV", "AV"]
+rates = [0.1, 0.2, 0.4, 0.6, 0.8]
+quick_rates = [0.2, 0.6]
+positions = ["start", "middle", "end"]
+rounding = "half_up"
+infeasible_policy = "clean_fallback"
+train_epochs = 2
+
+[cache]
+batch_size = 8
+threads = 4
+shard_rows = 128
+dtype = "float32"
+
+[smoke]
+epochs = 2
+seed = 2026
+train_size = 256
+valid_size = 96

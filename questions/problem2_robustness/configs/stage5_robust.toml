@@ -1,0 +1,31 @@
+# 阶段5独立配置：阶段4保持只读，验证场景不重抽样。
+stage4_config = "stage4_missingness.toml"
+output_root = "../outputs/stage5"
+version = "masked-gru-gating-v1.1"
+
+[training]
+models = ["B1-clean", "B1-augmented", "M1-uniform", "M1-gated"]
+seed = 2026
+hidden_dim = 64
+batch_size = 32
+validation_batch_size = 128
+dropout = 0.2
+learning_rate = 0.001
+weight_decay = 0.0001
+clip_norm = 1.0
+max_epochs = 40
+patience = 6
+threads = 1
+diagnostic_steps = 200
+
+[cache]
+batch_size = 8
+encoder_threads = 4
+shard_rows = 128
+memory_rows = 2048
+
+[selection]
+clean_f1_weight = 0.5
+missing_f1_weight = 0.5
+mae_penalty = 0.1
+score_tolerance = 0.00000001

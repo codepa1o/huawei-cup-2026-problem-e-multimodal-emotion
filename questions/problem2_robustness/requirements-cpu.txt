@@ -1,0 +1,3 @@
+# 单独使用PyTorch CPU官方索引安装，不将此索引加到通用依赖安装命令中。
+--index-url https://download.pytorch.org/whl/cpu
+torch==2.14.0+cpu
