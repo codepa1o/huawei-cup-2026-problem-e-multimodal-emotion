@@ -1,0 +1,45 @@
+# 阶段0—2试运行配置。路径相对于本文件所在目录解析。
+
+[paths]
+attachment1 = "../../../E题数据/附件1-数据集原始多模态样本/MOSEI数据集部分原始视频-100条"
+output_root = "outputs"
+
+[sample]
+expected_count = 100
+id_separator = "$_$"
+label_file = "label-100.xlsx"
+
+[time]
+unit = "seconds"
+origin = "first_video_presentation_timestamp"
+frame_boundary_tolerance_s = 0.02
+stated_duration_min_s = 2.648
+stated_duration_max_s = 34.567
+
+[audio]
+pilot_sample_rate_hz = 16000
+pilot_frame_length_ms = 25
+pilot_hop_length_ms = 10
+mfcc_count = 13
+mel_filter_count = 26
+pitch_min_hz = 70
+pitch_max_hz = 400
+pitch_periodicity_min = 0.30
+pitch_rms_min = 0.01
+
+[text]
+model_id = "distilbert-base-uncased"
+model_revision = "12040accade4e8a0f71eabdb258fecc2e7e948be"
+max_tokens = 512
+
+[vision]
+pilot_sample_rate_hz = 5
+num_faces = 1
+model_url = "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/latest/face_landmarker.task"
+model_sha256 = "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff"
+scene_model = "mobilenet_v3_small"
+scene_weights = "IMAGENET1K_V1"
+
+# 阶段1使用PocketSphinx 5.1.1英语声学模型及内置CMU词典。
+# 阶段2首轮使用DistilBERT词向量、帧级声学特征、MediaPipe人脸blendshape
+# 与预训练MobileNetV3全画面特征。两种视觉特征在每个采样帧拼接。

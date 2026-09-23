@@ -1,0 +1,18 @@
+# Python environments and caches
+**/.venv/
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+
+# Local datasets, model weights and generated outputs
+data/*
+!data/README.md
+**/outputs/
+**/models/
+**/cache/
+
+# Local configuration and logs
+.env
+.env.*
+!.env.example
+*.log
