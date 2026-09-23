@@ -1,6 +1,6 @@
 # Huawei Cup 2026: Problem E — Multimodal Emotion Modeling
 
-本仓库整理赛题问题一、问题二、问题三的分析材料与代码工程。问题一已完成附件1样本清点、原始时间轴和三模态特征提取；问题二、问题三目前建立目录与需求边界，模型实现将在相应问题中继续。
+本仓库整理赛题问题一、问题二、问题三的分析材料与代码工程。问题一已完成附件1样本处理主线；问题二已完成阶段0—7，包括三种子模型比较、独立测试、附件3的30条预测及解包复验；问题三仍待单独实现。各问最新验收与限制以对应目录运行报告为准，不代表全题论文和最终提交包已经完成。
 
 ## 目录
 
@@ -24,7 +24,7 @@ requirements.txt                   项目当前共享的 Python 依赖入口
 ../E题数据
 ```
 
-问题一的 `project.toml` 已按当前本机目录设置相对路径。克隆到其他位置后，请根据 `data/README.md` 更新问题一的 `paths.attachment1`，并在问题二、三开始实现时配置附件2—4的本地路径。不要将标签表、特征文件、原始视频或模型缓存提交到公开仓库。
+问题一的 `project.toml` 已按当前本机目录设置相对路径。克隆到其他位置后，请根据 `data/README.md` 更新问题一的 `paths.attachment1`，并检查问题二 `configs/problem2.toml` 的 `paths.data_root`；问题三后续配置附件2—4路径。不要将标签表、特征文件、原始视频或模型缓存提交到公开仓库。
 
 问题一使用 Python 3.12。首次运行前在 `questions/problem1_multimodal/` 创建虚拟环境，并从本仓库根目录安装共享依赖：
 
@@ -46,6 +46,8 @@ uv pip install --python .venv\Scripts\python.exe -r ..\..\requirements.txt
 生成的 `outputs/`、虚拟环境与模型缓存已加入忽略规则。问题一的运行记录保存在 `questions/problem1_multimodal/docs/阶段0-2_运行报告.md`；程序结果可按上面的命令从本地数据重新生成。
 
 ## 版本库约定
+
+问题二使用独立虚拟环境与锁定依赖，不复用问题一环境。规划、命令和结果入口见[问题二README](questions/problem2_robustness/README.md)、[阶段6报告](questions/problem2_robustness/docs/阶段6_运行报告.md)和[阶段7报告](questions/problem2_robustness/docs/阶段7_运行报告.md)。问题二推理子包约2.38 MB；全题50MB及最终匿名性仍待合并材料后另验。
 
 - 仅提交代码、配置和项目说明；数据、模型权重、缓存与生成结果留在本地。
 - 目前没有添加开源许可证；发布前应由项目所有者决定是否及如何授权。

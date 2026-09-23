@@ -1,0 +1,12 @@
+# 分析配置在新实验前固定，test及附件3不参与选择。
+stage5_config = "stage5_robust.toml"
+output_root = "../outputs/stage6"
+version = "analysis-v1"
+seeds = [2026, 2027, 2028]
+families = ["B1-clean", "B1-augmented", "M1-uniform", "M1-gated"]
+ablations = ["B0-T", "B0-A", "B0-V", "M1-clean", "M1-scattered"]
+ablation_seed = 2026
+ensemble = "equal_probability_and_intensity"
+test_conditions = "clean_and_quick"
+cache_rows = 128
+memory_rows = 2048
