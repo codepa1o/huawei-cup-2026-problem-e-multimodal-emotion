@@ -1,0 +1,5 @@
+# 冻结运行依赖、解释核心和配置使用字节级SHA256；禁止Git自动转换换行。
+# 保留当前文件原始字节，避免Windows检出后误判模型或实现已被修改。
+src/** -text
+configs/** -text
+vendor/** -text
