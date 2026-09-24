@@ -1,0 +1,11 @@
+# 论文优化阶段5：单一新增假设，配置在读取候选结果前锁定。
+version = "summary-pair-residual-v1"
+output_root = "../outputs/paper_stage5_crossmodal_v1"
+seeds = [2026, 2027, 2028]
+models = ["M1-uniform", "M2-pair-interaction"]
+rank = 16
+bootstrap_repeats = 2000
+bootstrap_seed = 20260924
+# 不读取既往已经公开结果的test；本轮结果属于探索性valid证据。
+evaluate_test = false
+replace_official_model = false

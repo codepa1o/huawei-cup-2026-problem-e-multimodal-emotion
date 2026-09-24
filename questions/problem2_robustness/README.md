@@ -226,3 +226,24 @@ $env:PYTHONUTF8 = '1'
 交付包2,378,830字节；原始checkpoint、轻量参数和解包结果差异为0。包内README给出独立推理命令。BERT需按固定revision预先获取，未随ZIP打包，本次使用既有环境和缓存复验，不等于自包含离线运行。全题50MB上限尚待问题一／二／三合并后另验。
 
 首轮82文件包仅作历史记录保留在`c5dd1e48a432b547_initial_verified/`；最终包已补齐测试源码，94个清单文件。问题二源码和结果尚未提交推送，本轮不执行Git提交或远程操作。
+
+## 论文优化阶段5：独立的轻量跨模态交互实验
+
+这不是上述历史工程“阶段5”的重写。新增rank=16的可用模态摘要两两交互残差，与M1-uniform按原训练预算、三种子及固定缺失协议公平比较；正式模型、原源码、R4论文和专项预测不变。
+
+- [实验协议](docs/论文优化阶段5_跨模态交互实验协议.md)
+- [实验结果报告](docs/论文优化阶段5_实验结果报告.md)
+- 配置：`configs/paper_stage5_crossmodal.toml`；输出：`outputs/paper_stage5_crossmodal_v1/`。
+- 三种子文本受损45条件Macro-F1：M1为0.538581，候选为0.537428；集成配对视频分组区间跨零，未通过预设推进门槛，保留原正式模型。
+- 本轮不评估test或无标签专项集，也不自动重打包历史交付ZIP。结果属于复用valid上的探索性证据。
+
+```powershell
+.venv/Scripts/python.exe -X utf8 -m src.crossmodal_experiment
+.venv/Scripts/python.exe -X utf8 -m src.crossmodal_report
+$env:PYTHONPATH = '.'
+.venv/Scripts/python.exe -X utf8 tests/verify_crossmodal_delivery.py
+```
+
+主入口可从完整epoch边界恢复并校验复用完成产物。`tests/crossmodal_worker.py`仅用于本轮并行预训练的辅助调度，常规复现无需启动；它不改变训练协议。六组模型训练时存在并行执行，训练墙钟耗时仅作记录；成本比较另在同进程、单线程、交替顺序下测定缓存特征前向耗时。
+
+最终验收以`independent_delivery_check.json`为准；其中全量历史基线对照与候选full抽样重推的范围分别说明，不将抽验冒充全量重推。源码保留中文说明，代码与报告由Codex辅助生成。
