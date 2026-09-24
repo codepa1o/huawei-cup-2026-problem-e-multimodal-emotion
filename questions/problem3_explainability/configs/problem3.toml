@@ -1,0 +1,21 @@
+# 阶段0预设；专项结果不得用于修改解释阈值。
+[explanation]
+seed = 20260923
+budgets = [0.1, 0.2, 0.3]
+display_budget = 0.2
+tie_threshold = 0.05
+epsilon_attr = 1e-8
+validation_explanation_count = 128
+random_repeats = 3
+batch_size = 16
+bert_batch_size = 8
+threads = 4
+# 采用掩码删除作为主游戏；保持mask、零表示替换只作不同游戏敏感性对照。
+baseline = "mask_unavailable"
+grouping = "raw_word_and_punctuation_offsets_v1"
+
+[timing]
+sample_rate = 16000
+word_boundary_tolerance_s = 0.02
+method = "pocketsphinx_given_transcript"
+human_review_required = true

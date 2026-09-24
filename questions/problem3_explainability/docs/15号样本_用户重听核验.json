@@ -1,0 +1,12 @@
+{
+  "sample_id": "15.pkl::0",
+  "review_source": "用户在当前对话提供的亲自重听结果",
+  "verbatim_transcript": "her father,the breadwinner,died when she was barely a year old,putting the family in a dire financial position. however,despite their poverty.",
+  "review_scope": "样本级口播文本内容核验，不包含逐词时间边界、视觉帧或其他样本的核验",
+  "status": "human_confirmed_transcript_mismatch",
+  "interpretation": "用户听到的完整片段与官方raw_text不一致；视频结尾与官方文本开头有短语重叠。具体错配原因及应关联的其他视频尚未确认。",
+  "official_data_may_be_overwritten": false,
+  "word_timestamps_verified": false,
+  "visual_evidence_verified": false,
+  "prediction_validated_by_human": false
+}

@@ -1,0 +1,10 @@
+# 复用问题二数值环境；torch单独使用官方CPU索引安装。
+numpy==2.5.3
+torch==2.14.0+cpu
+transformers==5.17.0
+scipy==1.18.1
+av==18.1.0
+pocketsphinx==5.1.1
+matplotlib==3.10.8
+pillow==12.3.0
+filelock==4.0.1
