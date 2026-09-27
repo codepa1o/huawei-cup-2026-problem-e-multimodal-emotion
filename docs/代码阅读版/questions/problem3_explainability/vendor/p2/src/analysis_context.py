@@ -1,0 +1,57 @@
+# 中文代码阅读版：仅供阅读，请勿从本目录运行实验。
+# 项目AI使用说明：本项目程序及代码是在人工智能工具辅助下完成的。
+# 工具名称：OpenAI Codex；模型／型号：GPT-6 Astra（gpt-6-astra，用户确认）。
+# 开发机构／公司：OpenAI；模型公开颁布日期：2026-09-03。
+# 日期依据：https://developers.openai.com/api/docs/changelog（2026年9月3日条目）。
+# 记录边界：历史逐次快照未完整记录；本次补注释不追写缺失的历史日志。
+# 原有历史注释与文档字符串原样保留；项目补充披露见根目录AI使用说明.md。
+# 原文件（相对项目根目录）：questions/problem3_explainability/vendor/p2/src/analysis_context.py
+# 原文件SHA-256：db8a54e10759ca755f4decc8cc725ffe303f876009437107b7c1a29c087af9bf
+# 冻结依赖来源：问题二冻结工程阅读副本，原vendor文件不修改。
+
+"""阶段6只读接入首种子并建立独立输出；不因最新种子指针改变而换来源。"""
+
+from pathlib import Path
+
+import tomllib
+
+from .common import file_hash, object_hash, read_json, write_json
+from .robust_context import context as robust_context
+from .train_robust import implementation
+
+DEFAULT = Path(__file__).resolve().parents[1] / "configs/stage6_analysis.toml"
+
+
+def context(config=DEFAULT, initialize=False):
+    path = Path(config).resolve()
+    cfg = tomllib.loads(path.read_text(encoding="utf-8"))
+    cfg["config_hash"] = object_hash(cfg)
+    cfg["stage5_config"] = (path.parent / cfg["stage5_config"]).resolve()
+    cfg["output_root"] = (path.parent / cfg["output_root"]).resolve()
+    c5, c4, base, r4, r5, b4, b5 = robust_context(cfg["stage5_config"], seed=2026)
+    if (
+        not read_json(r5 / "validation_report.json")["passed"]
+        or read_json(r5 / "implementation_manifest.json") != implementation()
+    ):
+        raise ValueError("阶段5首种子未通过验收或实现改变")
+    binding = {
+        "input_binding_hash": b5,
+        "stage5_report": file_hash(r5 / "validation_report.json"),
+        "stage5_model_reports": {
+            m: file_hash(r5 / "models" / m / "report.json") for m in cfg["families"]
+        },
+        "stage5_cache_index": file_hash(r5 / "text_cache/index.json"),
+    }
+    digest = object_hash(binding)
+    run = cfg["output_root"] / (cfg["config_hash"][:12] + "-" + digest[:12])
+    if initialize:
+        run.mkdir(parents=True, exist_ok=True)
+        if not (run / "input_binding.json").exists():
+            write_json(run / "input_binding.json", binding)
+        write_json(
+            cfg["output_root"] / "latest_run.json",
+            {"path": str(run), "run_id": run.name},
+        )
+    if not run.exists() or read_json(run / "input_binding.json") != binding:
+        raise ValueError("阶段6未初始化或输入改变")
+    return cfg, c5, c4, base, r4, r5, run, b4, digest

@@ -1,0 +1,1248 @@
+{
+  "generated_date": "2026-09-26",
+  "purpose": "仅阅读，不改变运行入口",
+  "files": [
+    {
+      "source": "questions/problem1_multimodal/src/align_50.py",
+      "reading": "questions/problem1_multimodal/src/align_50.py",
+      "source_sha256": "c5894c6468e134d2ea409db2720d378291dbc5e16f41d2cbe7c781653e91d19e",
+      "reading_sha256": "8107916b3cff1055295de790247bdbe99185fc948ea4684c1274abd74d18b115",
+      "added_logic_comment_lines": 8,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem1_multimodal/src/build_manifest.py",
+      "reading": "questions/problem1_multimodal/src/build_manifest.py",
+      "source_sha256": "25bbf737afefa4ceb937fa2abdda21e34933a01e52b16114710ffcf70a667593",
+      "reading_sha256": "abcc7623a991cd76bab0d39c52908d635ab485000e20bd2f5a04abe9296ce6b4",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem1_multimodal/src/build_timeline.py",
+      "reading": "questions/problem1_multimodal/src/build_timeline.py",
+      "source_sha256": "3d26bcbddea7d3970d8e6c0889bbe16ac57e59e6f720af25958107f3bd227ec9",
+      "reading_sha256": "0a8d18813dd4f2bf44530a8e5b71a17d37c72da156dfda3b9fe5441c2546d860",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem1_multimodal/src/evaluate_stage5.py",
+      "reading": "questions/problem1_multimodal/src/evaluate_stage5.py",
+      "source_sha256": "0a9228d1a3e7ee1b8852dd36fca39e4f58bb05b9739cf9027c1343cba2fed9bf",
+      "reading_sha256": "38e1f2212647f7e92979c06e49a619d0769c951d728614ea5b316063507ce55a",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem1_multimodal/src/extract_features.py",
+      "reading": "questions/problem1_multimodal/src/extract_features.py",
+      "source_sha256": "4255adfb249b8561f0c7c50af22908b96b4c3d3256a11713412366b537671be4",
+      "reading_sha256": "d72a0cd51a6f128813bc9bf998867cfbb1f5963460638eccdf607c56d45691cc",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem1_multimodal/src/independent_word_review.py",
+      "reading": "questions/problem1_multimodal/src/independent_word_review.py",
+      "source_sha256": "7a3c2758472eebd96b10165885c0ec0ce4c4959992e3ebdfa337e178ad33e879",
+      "reading_sha256": "1bfe7b5363c4fdbc54cd50e88e53585c48383572de79aedb9385d3d49b6fc2db",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem1_multimodal/src/validate_outputs.py",
+      "reading": "questions/problem1_multimodal/src/validate_outputs.py",
+      "source_sha256": "9ed606972be4f8fdcf3908aab939cc69fc00a7e6bc286f2cabd3ec703737c438",
+      "reading_sha256": "8d5095fe05d60b0006f516c6f44d54a52067ef34db30eccce880c5216d2ad5f9",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem1_multimodal/tests/test_alignment.py",
+      "reading": "questions/problem1_multimodal/tests/test_alignment.py",
+      "source_sha256": "70d0d13a20a0c3e253e54045d6f0f5070b9742c72e7b05ce29c282a5fa824168",
+      "reading_sha256": "b6d1b1e22aa842fcd06aecad22568e419d82fcd152c2661baf4bc7cf4a6ed253",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem1_multimodal/tests/test_feature_contract.py",
+      "reading": "questions/problem1_multimodal/tests/test_feature_contract.py",
+      "source_sha256": "57f78aa7809efc5da334a173ce27c1a3c9811c67efb2bb4140f51720379eda97",
+      "reading_sha256": "1ec7b79bfef5b578c4583e9b07e0c4e2e3d224c6f1b9ff9661699a394cd3512c",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem1_multimodal/tests/test_independent_word_review.py",
+      "reading": "questions/problem1_multimodal/tests/test_independent_word_review.py",
+      "source_sha256": "6b69d2b05d2931af8003810cf538b2509d01380b7e4e0a222699a9e5acd85c22",
+      "reading_sha256": "4fb10797db814136c304ac8fc084358c07744203f551d8947c856ffa51909457",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem1_multimodal/tests/test_stage5.py",
+      "reading": "questions/problem1_multimodal/tests/test_stage5.py",
+      "source_sha256": "b61e12f6180406b1c58a4871516d5b244137338023bede86944ff20ca704479d",
+      "reading_sha256": "b6347cebe222c8bc8440836947ec3ccad0da188b4f348ce84d3f98dcff02972a",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/__init__.py",
+      "reading": "questions/problem2_robustness/src/__init__.py",
+      "source_sha256": "04662be895a58b93448b8f9e5179eb705a6a6aca8a91567b1add8536fb63fee5",
+      "reading_sha256": "8500f8626d0c1bc4f9de8957aa2ba982b6bd0d1b31a28c1468036d9c84567fb2",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/analysis_context.py",
+      "reading": "questions/problem2_robustness/src/analysis_context.py",
+      "source_sha256": "db8a54e10759ca755f4decc8cc725ffe303f876009437107b7c1a29c087af9bf",
+      "reading_sha256": "bdbf3494c6ac6e35650677fd207bccf1cf4f4414dea972f259b97f9e00b15114",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/analysis_data.py",
+      "reading": "questions/problem2_robustness/src/analysis_data.py",
+      "source_sha256": "64a55434261ccfcacd1df6e8fb470b79008ba61e1a31381df8a6d73e24362e2d",
+      "reading_sha256": "1c62c58dbccc0cc633933c69d4decb92db76ca8b687c066b2c423045017ebd96",
+      "added_logic_comment_lines": 6,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/analysis_metrics.py",
+      "reading": "questions/problem2_robustness/src/analysis_metrics.py",
+      "source_sha256": "502d0bc552ed6141a72269b0c994109f10ab9a77e52dba39e4833e9d52defc6b",
+      "reading_sha256": "2dbd7f4f883a0baafbababf1d633b4cf4757618b80eff293dd2e3b8c7ebe2e38",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/analysis_models.py",
+      "reading": "questions/problem2_robustness/src/analysis_models.py",
+      "source_sha256": "7c62beb793817806b3dbce55a970390dfcd1f1fe4723236f2e3cc3c281e60e4d",
+      "reading_sha256": "f548e4e452a960cf3dcb31c017416386549869c68ea68171e12ac9ee1a5611e7",
+      "added_logic_comment_lines": 6,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/analyze_robust.py",
+      "reading": "questions/problem2_robustness/src/analyze_robust.py",
+      "source_sha256": "a5f0dd811b0801c8eb9c6457670f945461484fc41b0c865cd229d892eaa94994",
+      "reading_sha256": "31018bce33df0ec89f57a302a34dbf6a1ea58d210b8985b74ad8bb84cd96ab7f",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/audit_data.py",
+      "reading": "questions/problem2_robustness/src/audit_data.py",
+      "source_sha256": "28fe51b468371b18bc7cc590e029157882fead38457410a2fe4db7d999ee735a",
+      "reading_sha256": "09f9f453fb5958e634c10e0de33c0163499faf94349474c26a55a9db839bd76b",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/augmented_dataset.py",
+      "reading": "questions/problem2_robustness/src/augmented_dataset.py",
+      "source_sha256": "2306e82da8a2579182534b38d0e9a06fa1b30b4f6ee6a5856f8015d97c710051",
+      "reading_sha256": "77897d859e0950d1a14b4eef902f37f5cd743b6c7f013dc80162e01ce47084ff",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/build_missingness_schedule.py",
+      "reading": "questions/problem2_robustness/src/build_missingness_schedule.py",
+      "source_sha256": "0d2c2d9c130bc198a27b1461e1bf4b94fb3e4d0dcfd9ecefa75612404b7da216",
+      "reading_sha256": "6e04f6ae8961283794ef403006e3639da59ba2eb9b442fd6951f294595949e2a",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/common.py",
+      "reading": "questions/problem2_robustness/src/common.py",
+      "source_sha256": "6a69e0e9702f5d23fb23a116811a082bb6fb1adc9c9317e592ec87ebf2c6ac69",
+      "reading_sha256": "621cdf96a358269cdf511a13054dfeec39bc6de06e231ab1bbc33a15ee43e514",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/crossmodal_experiment.py",
+      "reading": "questions/problem2_robustness/src/crossmodal_experiment.py",
+      "source_sha256": "c0ab5810068bcce4cd300930cf69e7e4e56eb066388085033e5a70b4a7c30ddb",
+      "reading_sha256": "1287899dd526d9cd09e902820d3201ff8e1812d99ccd427ad262a860bfcce453",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/crossmodal_model.py",
+      "reading": "questions/problem2_robustness/src/crossmodal_model.py",
+      "source_sha256": "89d4498c3c08911502ab4cdbb7a8e0b6961ce62a06af3f97d0f717cf82ee56de",
+      "reading_sha256": "9cc24b07eb6e4aa7aa64d9eaa70d07c600b39aa30fe9b598625b342d9a0a2817",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/crossmodal_report.py",
+      "reading": "questions/problem2_robustness/src/crossmodal_report.py",
+      "source_sha256": "63e8744d1a5ad51dd692126e56c07c353f6e724964238000858ee08d8381a3da",
+      "reading_sha256": "75fe413bd54605bf54b99592e1be0905cc290942d57b4e247fdeafa9ced550c4",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/dataset.py",
+      "reading": "questions/problem2_robustness/src/dataset.py",
+      "source_sha256": "2c4e42648eed220d41bdb446a0f00f799dce7ca5bd9932ab855249ccc48fc57a",
+      "reading_sha256": "e40fa2b0e8bcbe9de160c025ee049833d2c2e9d58bd04fbd3aefb626f8b1c074",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/deliver_attachment3.py",
+      "reading": "questions/problem2_robustness/src/deliver_attachment3.py",
+      "source_sha256": "04895e6d6bac2e298a150dfae8fd063a895cf3d0a9b18fbf25fa0b622d4829ab",
+      "reading_sha256": "d940fc9d43b6ca6668d3ed87ed746b34b91f52f8c0fd1d24d9260b5e6b8c3526",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/delivery_utils.py",
+      "reading": "questions/problem2_robustness/src/delivery_utils.py",
+      "source_sha256": "44fe4e973e0f31255d0032433b345c34cdc14c93048ef4fb7d9462ab793cc923",
+      "reading_sha256": "4aebd8660a189974e408381477214bc60dcfc73796ac32be046cf92dacaa0832",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/evaluate.py",
+      "reading": "questions/problem2_robustness/src/evaluate.py",
+      "source_sha256": "f30618f980e05a716f46094705dffffbba4d9318a90cda5fa35f07325123e9ea",
+      "reading_sha256": "2d713e46a4085f2c115f320133804dbb7a0a1865c81462f39440ca74dd66c1a7",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/evaluate_analysis_model.py",
+      "reading": "questions/problem2_robustness/src/evaluate_analysis_model.py",
+      "source_sha256": "6ab3d453b30a77017da89ba384b01c342ed6b63960d566107ff3ebad48a5c637",
+      "reading_sha256": "f1ebe77d5969556fd4d05ac3975dd45fa7619f45afde177d341e9d189adb3c59",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/evaluate_heldout.py",
+      "reading": "questions/problem2_robustness/src/evaluate_heldout.py",
+      "source_sha256": "5c5971d695326ef201d7ee452e855034ede9611a8bfec222310716854d3a4bd1",
+      "reading_sha256": "dd20a7689a7778d62e42277ed49f2d8d7bce3b90d5aadd8aaadfb7e7d300a63a",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/heldout_data.py",
+      "reading": "questions/problem2_robustness/src/heldout_data.py",
+      "source_sha256": "cacc62c22022634bbef9a178724c42711f8302d758398b5aac0a95090b460811",
+      "reading_sha256": "0d000b273b8431c422e8fc0149953adb7fc8540fb1f6874fdeac74dfbdf9b3a8",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/missingness.py",
+      "reading": "questions/problem2_robustness/src/missingness.py",
+      "source_sha256": "022a1834e4be4918f113ab3e10c5bd01bd70a3405063b9572f21c8019162365b",
+      "reading_sha256": "a64eeaec29c4f4cad95b7a0090f8a429d93c834de1f15c2f2e0c6727a0c3ce3a",
+      "added_logic_comment_lines": 7,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/missingness_io.py",
+      "reading": "questions/problem2_robustness/src/missingness_io.py",
+      "source_sha256": "21bab13ebe27611c5eda985abd313b5cba9777ac9cf38a50d7dd75f761db19ee",
+      "reading_sha256": "37f9a561d1060c6a5fcde4dc65a11cb076106cfd91399e72032ace5d29fa53e3",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/models.py",
+      "reading": "questions/problem2_robustness/src/models.py",
+      "source_sha256": "2c8a78fac4e19aba677f52efb3da5c8c0a9756ade434b3f100512f76758cd028",
+      "reading_sha256": "9809940823004a99fbab5b146fade7eba139b06532e777dfd067e2fb52af82bd",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/plot_analysis.py",
+      "reading": "questions/problem2_robustness/src/plot_analysis.py",
+      "source_sha256": "69830d44b998c33f3e558cdcdaea65ab632fcf7d878cd9366b15fe27d70d1f1d",
+      "reading_sha256": "56d262633db55dc8fe0e707f8d117051a835c328fed93a0889c9a01d85fcd997",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/predict_attachment3.py",
+      "reading": "questions/problem2_robustness/src/predict_attachment3.py",
+      "source_sha256": "bcc8eb3e0b5088c379c5dd85a49e03b966de2a73cb7894df1caad53a3785c7f3",
+      "reading_sha256": "35eb27693e0dcc530f8448f17c1053ee9195ccc1b4e505b4c9b9e78d3d9705c8",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/prepare_features.py",
+      "reading": "questions/problem2_robustness/src/prepare_features.py",
+      "source_sha256": "9505c7c3e4915ab299ad63492cf9ab8705cd4d75e6f880e7aeb7f86d26b1651b",
+      "reading_sha256": "72522bc947c2d063ade79bec7ef09e49df2489e7c8dfa7f5d4912c17ecbfa7f5",
+      "added_logic_comment_lines": 6,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/prepare_missing_text.py",
+      "reading": "questions/problem2_robustness/src/prepare_missing_text.py",
+      "source_sha256": "14696b685fe83c38c20a0223254e5078df21f038f72b1d463c8230a0cbedbdd2",
+      "reading_sha256": "6aad99af7bc726261667f2c7693d9da21fd5e9b5c65c1f774c173f32c61249cc",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/prepare_repeated_seed.py",
+      "reading": "questions/problem2_robustness/src/prepare_repeated_seed.py",
+      "source_sha256": "bd98e3a3d39b10db94740caf93870726270ea60db10d1805687bec9d270e6947",
+      "reading_sha256": "37558cd7b1504bbaf4089713da499ff0814c0644de69ba2d0e737f66a97b6c5f",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/robust_context.py",
+      "reading": "questions/problem2_robustness/src/robust_context.py",
+      "source_sha256": "fa30d159672af79c842010000915e1e3999ab58c5e769c230cc3ebf367fba9b7",
+      "reading_sha256": "4e792b623e029588d66ad12358e36ad6c00d1eee50b660381e55dfaae06d5e9e",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/robust_data.py",
+      "reading": "questions/problem2_robustness/src/robust_data.py",
+      "source_sha256": "c1c2f10cfcb1ea5cb90511c21624bc9620711ab419e44883adc6dea695f20741",
+      "reading_sha256": "168272a019fc7c5d22ea8a4b80004f6eaa46bbdda30ff9eb7d80eba3c8adca66",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/robust_evaluation.py",
+      "reading": "questions/problem2_robustness/src/robust_evaluation.py",
+      "source_sha256": "8a89bb72d0c9bf8830ad71979e29c54b97e879d7ff1504683769ce1abf3372e4",
+      "reading_sha256": "cb725bee50d097fcabce46449f6c849c0de8a83d01ec0c5580e80c041a61b727",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/robust_models.py",
+      "reading": "questions/problem2_robustness/src/robust_models.py",
+      "source_sha256": "69c75b8cb4bb28363d228fceec318e57a69067290ef09ff59a211a420aefbc7f",
+      "reading_sha256": "4dcba3152bc96c60870eb91cf9c0a3d2a1c94b7fbffd76e126d1b72f815954e3",
+      "added_logic_comment_lines": 14,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/robust_training.py",
+      "reading": "questions/problem2_robustness/src/robust_training.py",
+      "source_sha256": "0e66d948e9f55e57e8a1025ad5264b9cd045bf5de74bd687a12fe8afa79258d5",
+      "reading_sha256": "81c006e4e8f26bb76dbd29417298d9d1d48e242ac9c2fcee6369effb00b8290a",
+      "added_logic_comment_lines": 4,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/summarize_analysis.py",
+      "reading": "questions/problem2_robustness/src/summarize_analysis.py",
+      "source_sha256": "9abb635fd7eb7763a2e659f3f518c1a1cc5e21872ccf9298956a13daad5b1ef5",
+      "reading_sha256": "801cb13d7c9bdac303ca040125dc0f9e8c017f813b55db8bf3ad060fbcc6c0c2",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/train.py",
+      "reading": "questions/problem2_robustness/src/train.py",
+      "source_sha256": "fd0378dff95d602d764be73f05988dfde98299e09352f4b0bbecfff21ba26611",
+      "reading_sha256": "e250f355babdbdd685b5b6e5a3b8494bfc2be9251dfc643cc4d23238d280e30e",
+      "added_logic_comment_lines": 8,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/train_ablations.py",
+      "reading": "questions/problem2_robustness/src/train_ablations.py",
+      "source_sha256": "9a6089a7bfebfdebb1f5a794aa1852cfa84ae4f4fca5dd05190c2e2b3409e7ad",
+      "reading_sha256": "ba8e11c4dc4c822de38619f355e8fe5886c348172cbfa29371b3c0ce9ca3a105",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/train_missingness_smoke.py",
+      "reading": "questions/problem2_robustness/src/train_missingness_smoke.py",
+      "source_sha256": "886f6700d621057b54a807730065a1403d9251253d5e842f1024f0f3400d3f40",
+      "reading_sha256": "497ef02fa095012904da0a74bdaab19c794cc90a9eefbbdacec4c358c834f9d2",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/train_robust.py",
+      "reading": "questions/problem2_robustness/src/train_robust.py",
+      "source_sha256": "563e4477a802349a6a489680cf34b183a63a7c9693726997730834e119be85a8",
+      "reading_sha256": "50e579917ca762a07329cb2f2824439602275e263fb1c6ef84b10efe5b14daf3",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/validate_analysis.py",
+      "reading": "questions/problem2_robustness/src/validate_analysis.py",
+      "source_sha256": "c17888ee351ec0fd4fb9850029e5e073759d1faf68bca3edbcb9dd166b35352c",
+      "reading_sha256": "3a1e7b7e7f537828cf66d2bf4fbc435c4b184a2b74eb15f3aecd2c8fb7cd8769",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/validate_delivery.py",
+      "reading": "questions/problem2_robustness/src/validate_delivery.py",
+      "source_sha256": "39b6dfdf223ca392a5db41bf2a84e8e53694b7358d1290b6a9c3182e9cefcf52",
+      "reading_sha256": "656c7571ae450f33dcfadd45763c335d5b259b73bd77885c600a67247878e5a7",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/validate_missingness.py",
+      "reading": "questions/problem2_robustness/src/validate_missingness.py",
+      "source_sha256": "35232de81c913125cb8144215a60364cf3ccbc2d4952c51129debeb5b9ce88f7",
+      "reading_sha256": "0c3ac9916de5b2c1d5201f9507c6b4b5798e7af02aab739460c7e522e47df4d1",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/validate_outputs.py",
+      "reading": "questions/problem2_robustness/src/validate_outputs.py",
+      "source_sha256": "9ab7488802ba17cb2ffcf245dcc096f2093da14979809c71cdbd6f55979c4a48",
+      "reading_sha256": "733440dc59f9c5b5c8ea1bd561608521acbe549554e13d78ee4fecf9eb2575f1",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/src/validate_robust.py",
+      "reading": "questions/problem2_robustness/src/validate_robust.py",
+      "source_sha256": "6bf7899241595e178d72ce85615f6eae28bf42e1e85cf3921ee801a189cf1d25",
+      "reading_sha256": "4b9a93cfcb365daaf8594cce54884c05ba92d57694a24a3641cc57c31d911521",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/tests/crossmodal_worker.py",
+      "reading": "questions/problem2_robustness/tests/crossmodal_worker.py",
+      "source_sha256": "8dcc4266a5755eafde0a25190aa525cdfc31b8a2bcf824d6ceabd837b35b8a6d",
+      "reading_sha256": "4292a16de07dfacdf3a0b96fc78a3d13b4c446dfde86c2a1d7da90b64db3330a",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/tests/test_analysis.py",
+      "reading": "questions/problem2_robustness/tests/test_analysis.py",
+      "source_sha256": "4d7cd8aa94a348b4b39979068092edd187d371f27235e13aaf6849d4108fcda2",
+      "reading_sha256": "3517def29e37463cfdf14cf4763cabf999976b5386dc738cff207eeffe4c1812",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/tests/test_augmented_dataset.py",
+      "reading": "questions/problem2_robustness/tests/test_augmented_dataset.py",
+      "source_sha256": "6891da062a37f87489ab0717d25ddeb9a3cb493f3a913b283f26c21f65aab6df",
+      "reading_sha256": "ea55f7e662f6c969fb90546f2cdc19475b0decc281d347887210906b7b025c56",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/tests/test_baseline_pipeline.py",
+      "reading": "questions/problem2_robustness/tests/test_baseline_pipeline.py",
+      "source_sha256": "d92caf144db2969a7baa42a3704bfa85bfa2f7b81b094dcb11a15421c3a0feff",
+      "reading_sha256": "44a785896f4a19a7d2824e30753859b92fd2a248e3c5fd531132a1021e2ae522",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/tests/test_cache_recovery.py",
+      "reading": "questions/problem2_robustness/tests/test_cache_recovery.py",
+      "source_sha256": "ba43d8f571dea8bfb633e8b1fc7b37aa044447c1e4aab347e7b1896a13334840",
+      "reading_sha256": "255d08fc48694feeaac6ebe7f4bf27c160f6cb59e32329576a81e6f7a4f6f6e9",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/tests/test_crossmodal.py",
+      "reading": "questions/problem2_robustness/tests/test_crossmodal.py",
+      "source_sha256": "4e4567935a4840a824a2893f3288b791f74c1a806a072d29c067410925c871d1",
+      "reading_sha256": "843480c89fdd74e09add32417143dced0a849f55a0714d28067f57aafef084bf",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/tests/test_data_contract.py",
+      "reading": "questions/problem2_robustness/tests/test_data_contract.py",
+      "source_sha256": "8e02511433778ae00709f73ac1ae6009a736f0bc71556892ee7d6e1f4562ee2f",
+      "reading_sha256": "1a1d707a0d8701f8a3ea68cba20f0ab55820b041e34ab4d72327051eba6fe0a9",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/tests/test_delivery.py",
+      "reading": "questions/problem2_robustness/tests/test_delivery.py",
+      "source_sha256": "9ae0ca00bd7c5fa6953fdb7f9e5a47f1fc8eef9213a3e427c9e6a9f2d99e77be",
+      "reading_sha256": "073853a5616e040b88eb4f7d4b2ef56a8ba555d8f7cfd376897a995c4cbb84f8",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/tests/test_heldout.py",
+      "reading": "questions/problem2_robustness/tests/test_heldout.py",
+      "source_sha256": "79aad8ccdb9d67bca3f4a5d5deb63c4a3475a62c9397cfe94f6da83a3ed10a5d",
+      "reading_sha256": "c0057e97adadb8befe8bd8a70b5dd25e27190bc9948a0258f9ffa71117235700",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/tests/test_missingness.py",
+      "reading": "questions/problem2_robustness/tests/test_missingness.py",
+      "source_sha256": "3fb2e35a1de4d833148c99ff8eb65e055832c0e0a9f5ed9f0d598f4945b67fce",
+      "reading_sha256": "9057e4d949f77fe4123dee02b292924869337bf4881cd26964eea6c4a8a4d32a",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/tests/test_missingness_schedule.py",
+      "reading": "questions/problem2_robustness/tests/test_missingness_schedule.py",
+      "source_sha256": "450826596279a44f576495deab98c4f4b69e7e1881599ad1abb4253271ad79b8",
+      "reading_sha256": "bcf504e52414e77ad4aa277582c9f4483bf4a5d742fa2bc801ff4cfa5f796c62",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/tests/test_robust.py",
+      "reading": "questions/problem2_robustness/tests/test_robust.py",
+      "source_sha256": "9a8d9428c69dd86a44694254592e4064990ce5e057e0279256ecbf908c5e1956",
+      "reading_sha256": "c3a2d19961aca2e9f2f4440637cb7872c6c54f8444391085fb115fd326d51283",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/tests/test_robust_cache.py",
+      "reading": "questions/problem2_robustness/tests/test_robust_cache.py",
+      "source_sha256": "35d9d9fe85c47fe632f9d8c9990e68557ec0299aea34cfd68fb81411a776e6d4",
+      "reading_sha256": "8c73e2ffdc4ae088f6a50d212ba83da9519237dffa17bab679d54d66140a2024",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/tests/test_text_interface.py",
+      "reading": "questions/problem2_robustness/tests/test_text_interface.py",
+      "source_sha256": "0b9486045b2372e7ffe38dc9617279e3c1e64fc82673813a4fc8c8e987dad368",
+      "reading_sha256": "3099e04c16e3c4464b0145aa9c496348670e7a10b6e1cadeff665c2099bd6cc9",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem2_robustness/tests/verify_crossmodal_delivery.py",
+      "reading": "questions/problem2_robustness/tests/verify_crossmodal_delivery.py",
+      "source_sha256": "edd0fc94b9b27e5034383d6e1806fe3eee80445d87542e3520d01eb6f60089a3",
+      "reading_sha256": "5d5490112495c58fd50c8b5b86dce61f6eb0f8319951a6daaaa871a5f655586e",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/__init__.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/__init__.py",
+      "source_sha256": "b436c5ed9ba2d997cf58a48b86c2b8d04eb5e9571c54697b97a2263f4c3ff92e",
+      "reading_sha256": "a915d3db22cb2dc01fa0f5a6d082534a8d667d5e96d3a835feefc4feb460e5b2",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/audit_data.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/audit_data.py",
+      "source_sha256": "1e436b6ae3699e083dc73d8177706709afd4c87d061fca8fc8309c1c79d87576",
+      "reading_sha256": "58fb3683ddaf344071e20cdfe77228c9d3c57d927c31434d5cce853b8354742c",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/build_delivery.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/build_delivery.py",
+      "source_sha256": "3eb818d25dbcc33a3cf3fb7da8410f2cbb35ea32419cee1dda1ee9de4979356d",
+      "reading_sha256": "85c7983c5fc0277ecff955f67cdb5d19a296bfae7ab4ff22f3d462b3757d7181",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/check_interface.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/check_interface.py",
+      "source_sha256": "6959857d2b89c8aa8a764dcad51e307d1bf9717f4f40f8fb3223ebd74657f97b",
+      "reading_sha256": "d6cfda943113cb057ccebb2b2bcccaf6120297a1ceb2a61b6ed4630d29605064",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/common.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/common.py",
+      "source_sha256": "3296110e13de6ce8e7757f1be034d727379343f22ce4bab0cc549d45ed0c6c08",
+      "reading_sha256": "1f9ab187bb79f8c0cc4f84d0cfa54f3bb1686aef60e3ccac332e978bb70e4dbf",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/ctc_time_fallback.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/ctc_time_fallback.py",
+      "source_sha256": "6f68d0dea3d078b832694d1ce5a210edbe1049b53c1a087fea4608694b9e27e1",
+      "reading_sha256": "056643af6cefd6c5bc948fe57404ed78e35e5421cbe9b279d443c02d4883335d",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/evaluate_explanations.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/evaluate_explanations.py",
+      "source_sha256": "db0675ccd8fa2e83f729d2a72b397d737a1c08ec603e1ae52c9bfb9fc523f8e5",
+      "reading_sha256": "40b6d63ea1a0fabd91c7fd3a277d582eaceaa78da118b27a1acba8c5a5d6403d",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/evidence_coordinates.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/evidence_coordinates.py",
+      "source_sha256": "3b15cc25d779d12a46ac3c48872487d140fd931239df77287a958d023d0bf880",
+      "reading_sha256": "876e145878d9f2dd086f03951ab5b7cdb12c6d4ac11e23d79e2d9709ea2bc1af",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/explain_pilot.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/explain_pilot.py",
+      "source_sha256": "829c85fab6348724cb597c761bd75391a00640ae882294022eabdcc75f0e9ad3",
+      "reading_sha256": "d55fb1c6e09030a25c5da35050c3dfec3de1e0c581bb9049c0fcf30ae9bbced4",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/frozen_predictor.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/frozen_predictor.py",
+      "source_sha256": "e31cf1cd8088ced285fe1e14adda1775213b0c6ac881615956b920113aaf6a79",
+      "reading_sha256": "20d6f7c887582d9380ba03cfc90f4fc69c728b7f097fb08e8b0f26bc96cbdf31",
+      "added_logic_comment_lines": 7,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/interventions.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/interventions.py",
+      "source_sha256": "0467a671bb3345b7240aea3a65c112f361a5613c75d8715088ff9e3fb2f46379",
+      "reading_sha256": "908cb16e0d6e6d8376a181dbd58ea4dbfc708c1ed30080ddcff27315a9bf9904",
+      "added_logic_comment_lines": 9,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/local_evidence.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/local_evidence.py",
+      "source_sha256": "7b0f4915e448ef641574a27c78b4a98bd19d5bfea11206d65ca6187cb8cc0e2d",
+      "reading_sha256": "79d97f92e2a07777934d9b363079b6255fb0fa4ab57e786b75ca1ea0318de191",
+      "added_logic_comment_lines": 6,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/modality_shapley.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/modality_shapley.py",
+      "source_sha256": "3c762b869dc1a4bb49ef77aa75313faed6864352e82b10a590a0f9095e070197",
+      "reading_sha256": "fb0bdfd0f4b13ca643525c6f074bdbce88a6e2722bbc3b6010f5d769edbf2d04",
+      "added_logic_comment_lines": 10,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/paper_revision_analysis.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/paper_revision_analysis.py",
+      "source_sha256": "8cea4c61dc4f9b02691e51b4578879d96ad42d72759b20f0bf29a2a3b66eb6ad",
+      "reading_sha256": "84dbf6b42ef5591fa5adf5c7f6996bf4d5a7432733d254824e2b39e4f2f6f1e3",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/predict_attachment4.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/predict_attachment4.py",
+      "source_sha256": "5370a76c5a7dced635fbf83abbfb7f50338148503f662cb071f194210b89ac2c",
+      "reading_sha256": "7d6b84d4a4178872c07e1c70896bec4960f75ca004de98a77567681f64cfd49f",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/prepare_inputs.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/prepare_inputs.py",
+      "source_sha256": "790134cf9a08d4bd6f7288b2ca053f9d259e8670d44e150f7ab5ddcbf7523df3",
+      "reading_sha256": "3421a261c662fa27be07105864694df624ad58a5a7c75f7495a7112db3143e79",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/record_human_source_review.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/record_human_source_review.py",
+      "source_sha256": "d61f4e0afbc690d70e53a6f2bc1eea9e9754da6db51ebacb511281f73b7ae201",
+      "reading_sha256": "10eea64327f615180c0d714ffce617e3a470df2d2e92e480fa63b2673b53ac19",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/refine_time_mapping.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/refine_time_mapping.py",
+      "source_sha256": "e9c9bba66d00e8b336d9113de350018ced2e9abbce629d57909631fa1e61416a",
+      "reading_sha256": "17c2abb5f74010791035cb396b201021480c04f2cbffd05bbea72d29e97e2402",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/render_cards.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/render_cards.py",
+      "source_sha256": "8f558dec53cd7fd267672b03b19b34f3bbdaf842371d53dbb1e9e134ac4afc4c",
+      "reading_sha256": "e804135603cab7d3ffde2efaf88c6a695e724265f57931a2281f3feb9add7494",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/replay_package.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/replay_package.py",
+      "source_sha256": "3dc9593b981b7ba8ee344524294f9cd5e68c92edfbbdbbaf1de8f81cbf316adc",
+      "reading_sha256": "8afee87093983299bb4fb14b01e6a617b9d19dfe0381e0227afc58b93f89d7fb",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/revise_diagnostics.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/revise_diagnostics.py",
+      "source_sha256": "4a8069884f4e275d59abe349310e5962fc18cac778cfacd6f8fd2ac2af4b43f2",
+      "reading_sha256": "d1809ea520b4f7b5a59831c83d07611b787a8a118de67f149a425540e0cb5307",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/run_tests.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/run_tests.py",
+      "source_sha256": "4368d70a44c05caeb44e7de63ce62348222c03e5d93bc614b6b72ba0412bae9a",
+      "reading_sha256": "13c4cbb5b486f99e0e9822df86ab2fe60433996e81d2232535480b8a43675364",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/supplementary_analysis.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/supplementary_analysis.py",
+      "source_sha256": "ac54e21c210cc1eb10014be1ee338785e0b7bb3e2d564d4472f8f17b40451615",
+      "reading_sha256": "cd318c46ccc1368049e20169374cc917b00594fade486bf91ebffa19fef4291a",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/time_mapping.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/time_mapping.py",
+      "source_sha256": "4dc094cfc2dc8c02dfd9a21c305ac3bcaca126e8d4598145e68b4b72b63d51dc",
+      "reading_sha256": "7217fe3259547ae928d02441756d259541f986f8f05144edff56c6af02f445a5",
+      "added_logic_comment_lines": 7,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/src/p3_explainability/validate_delivery.py",
+      "reading": "questions/problem3_explainability/src/p3_explainability/validate_delivery.py",
+      "source_sha256": "9b7a3d414d9b353a2bd062328b45597a65034101b678b39de224a6c75020bc16",
+      "reading_sha256": "8a934a5ec0f5d73311e7996cb5710aaab139b0344fc00eee329f50c303a803ac",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/tests/test_coordinates.py",
+      "reading": "questions/problem3_explainability/tests/test_coordinates.py",
+      "source_sha256": "17f9ad7ec6028bfaf183c9f044d6035b3d6fbe5c3bd361d51bdc2f58f9acf194",
+      "reading_sha256": "58b43104d1da58506e4137268959e413cf69bf48d02ecd5c33c074a1284f3441",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/tests/test_ctc_and_package.py",
+      "reading": "questions/problem3_explainability/tests/test_ctc_and_package.py",
+      "source_sha256": "d46f6fb63c8abd1cbdeeb4cdfa6d99cbe10c4c58c3535c89bfca0e5fdd8b04ce",
+      "reading_sha256": "1b0571327f27d42be19723ad919cbf58120d9e6c0d2ec98cd1df795f361a5d87",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/tests/test_explanations.py",
+      "reading": "questions/problem3_explainability/tests/test_explanations.py",
+      "source_sha256": "a6ab98a7e9454b76681a87c160eb533d139eeece867f5424458e004418a630ff",
+      "reading_sha256": "69f97ddd2dd64d24d4b28e4837fef0e2813175d3d0d81000c4ffb60ce2dc37b5",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/tests/test_integrity.py",
+      "reading": "questions/problem3_explainability/tests/test_integrity.py",
+      "source_sha256": "1ee8f7f0d02fa58a96f042de85e68676c636f47f7c4dbd5bfc9466a5843e4242",
+      "reading_sha256": "515055c6725d832b9818e2930dde7d75ecdbc8657675f365626ae9bdb7133d53",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/__init__.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/__init__.py",
+      "source_sha256": "04662be895a58b93448b8f9e5179eb705a6a6aca8a91567b1add8536fb63fee5",
+      "reading_sha256": "c0b5d01502dabd04606509adfb014f32d9dab95db9057db1b01dc76a2ae521d9",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/analysis_context.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/analysis_context.py",
+      "source_sha256": "db8a54e10759ca755f4decc8cc725ffe303f876009437107b7c1a29c087af9bf",
+      "reading_sha256": "338e7b7797b4cd1d7d2705a072e7c4004258fce7d991a6c3995d822a55e2e567",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/analysis_data.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/analysis_data.py",
+      "source_sha256": "64a55434261ccfcacd1df6e8fb470b79008ba61e1a31381df8a6d73e24362e2d",
+      "reading_sha256": "dbff9a82b637f0645b79fe4d0d7dda3f17190bcdd82359fd2356679c544f20a8",
+      "added_logic_comment_lines": 6,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/analysis_metrics.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/analysis_metrics.py",
+      "source_sha256": "502d0bc552ed6141a72269b0c994109f10ab9a77e52dba39e4833e9d52defc6b",
+      "reading_sha256": "b52db68356876a998f8ddd7c3747bfb3b6a7e988039ae2d4f63464a59a242a32",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/analysis_models.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/analysis_models.py",
+      "source_sha256": "7c62beb793817806b3dbce55a970390dfcd1f1fe4723236f2e3cc3c281e60e4d",
+      "reading_sha256": "d5bba9e473cb0bfadd30af778e32b6155d6c84c7f81d7100b81f8dcfe7dc0c3f",
+      "added_logic_comment_lines": 6,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/analyze_robust.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/analyze_robust.py",
+      "source_sha256": "a5f0dd811b0801c8eb9c6457670f945461484fc41b0c865cd229d892eaa94994",
+      "reading_sha256": "271359efa66bfdc072471ef8c90400e582a6a9da384b0fba129ecaaf15bb1629",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/audit_data.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/audit_data.py",
+      "source_sha256": "28fe51b468371b18bc7cc590e029157882fead38457410a2fe4db7d999ee735a",
+      "reading_sha256": "03fd797b4b065a9eb310ce5bb128a2a6490227ed4f1843a2e3087120bce8f099",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/augmented_dataset.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/augmented_dataset.py",
+      "source_sha256": "2306e82da8a2579182534b38d0e9a06fa1b30b4f6ee6a5856f8015d97c710051",
+      "reading_sha256": "62c67bab6395f3457eea51ab8cc498cde9ffa459d207c90e65fb8dfd2651062f",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/build_missingness_schedule.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/build_missingness_schedule.py",
+      "source_sha256": "0d2c2d9c130bc198a27b1461e1bf4b94fb3e4d0dcfd9ecefa75612404b7da216",
+      "reading_sha256": "0167c3171b11b7feae368267af116a953c48ed2297c845034d3bf8fe5e0c7646",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/common.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/common.py",
+      "source_sha256": "6a69e0e9702f5d23fb23a116811a082bb6fb1adc9c9317e592ec87ebf2c6ac69",
+      "reading_sha256": "7bd9c08562c4e9f38cc879ad85fc03b7da95b580a01aaf1e23c18d523c34bd8b",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/dataset.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/dataset.py",
+      "source_sha256": "2c4e42648eed220d41bdb446a0f00f799dce7ca5bd9932ab855249ccc48fc57a",
+      "reading_sha256": "cab2a830309cee9ae412d0860257e3636a4cfba0efcc88a36ff857e104154158",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/deliver_attachment3.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/deliver_attachment3.py",
+      "source_sha256": "04895e6d6bac2e298a150dfae8fd063a895cf3d0a9b18fbf25fa0b622d4829ab",
+      "reading_sha256": "90c706ecc85a7aa7e86d77d6d5df3db87291d5bd67ab3764e95708e57469eee1",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/delivery_utils.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/delivery_utils.py",
+      "source_sha256": "44fe4e973e0f31255d0032433b345c34cdc14c93048ef4fb7d9462ab793cc923",
+      "reading_sha256": "b9b281a52f57ef4193619d33524597665b7261fc4e98af5be3228c49599a7dc9",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/evaluate.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/evaluate.py",
+      "source_sha256": "f30618f980e05a716f46094705dffffbba4d9318a90cda5fa35f07325123e9ea",
+      "reading_sha256": "f58a08015c12d29a18401a0de77cbed03a7af9363f32ffe82a13a64c6f449b63",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/evaluate_analysis_model.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/evaluate_analysis_model.py",
+      "source_sha256": "6ab3d453b30a77017da89ba384b01c342ed6b63960d566107ff3ebad48a5c637",
+      "reading_sha256": "7c9b0279bb5a4cb799d323e89cf432d0869cfc9fbf5a98e277223cfd9efc3ee8",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/evaluate_heldout.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/evaluate_heldout.py",
+      "source_sha256": "5c5971d695326ef201d7ee452e855034ede9611a8bfec222310716854d3a4bd1",
+      "reading_sha256": "43f9b5d95544edb6fd2dc5bb48b0c43024e2402de7c78bb8ecbcc024f1c79706",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/heldout_data.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/heldout_data.py",
+      "source_sha256": "cacc62c22022634bbef9a178724c42711f8302d758398b5aac0a95090b460811",
+      "reading_sha256": "ba04777fd4e05fffb4ba04280f740ae09a8304853efe1f7d8d41f2c946870b7f",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/missingness.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/missingness.py",
+      "source_sha256": "022a1834e4be4918f113ab3e10c5bd01bd70a3405063b9572f21c8019162365b",
+      "reading_sha256": "fe87ee01012869736a7c09d45729ebdbef0dbe48d723320f371e620db06888a9",
+      "added_logic_comment_lines": 7,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/missingness_io.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/missingness_io.py",
+      "source_sha256": "21bab13ebe27611c5eda985abd313b5cba9777ac9cf38a50d7dd75f761db19ee",
+      "reading_sha256": "6ef3278acc94eb67c9242a126290bf951589bf50294b9b4f08d65b5fe2735242",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/models.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/models.py",
+      "source_sha256": "2c8a78fac4e19aba677f52efb3da5c8c0a9756ade434b3f100512f76758cd028",
+      "reading_sha256": "434baf46091bb22bc00bdb05eb5d3301a8ebb1bbe374dcb86929d1ea79909641",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/plot_analysis.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/plot_analysis.py",
+      "source_sha256": "69830d44b998c33f3e558cdcdaea65ab632fcf7d878cd9366b15fe27d70d1f1d",
+      "reading_sha256": "be44dfd55300f1b90047b2ec4c5f64c1f8bce1f66d0b6ad890323a73a8a13fcf",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/predict_attachment3.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/predict_attachment3.py",
+      "source_sha256": "bcc8eb3e0b5088c379c5dd85a49e03b966de2a73cb7894df1caad53a3785c7f3",
+      "reading_sha256": "79a7c7419bb3ecca52fada77e845c2f691a11017e98c4b68b99e0bd511394d69",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/prepare_features.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/prepare_features.py",
+      "source_sha256": "9505c7c3e4915ab299ad63492cf9ab8705cd4d75e6f880e7aeb7f86d26b1651b",
+      "reading_sha256": "e286d90dbe4c48a161ad95726e7fd188e26b77f11ad483e0ae31d37ac4b1d7ec",
+      "added_logic_comment_lines": 6,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/prepare_missing_text.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/prepare_missing_text.py",
+      "source_sha256": "14696b685fe83c38c20a0223254e5078df21f038f72b1d463c8230a0cbedbdd2",
+      "reading_sha256": "e547d746c467555bf48a5e87d68df11af82dad708426c5b9aa6aad897ff2f5fb",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/prepare_repeated_seed.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/prepare_repeated_seed.py",
+      "source_sha256": "bd98e3a3d39b10db94740caf93870726270ea60db10d1805687bec9d270e6947",
+      "reading_sha256": "d37422a744ae91a7465ec7e320cb2db94f0110de96dec537bb1d2353d5c15460",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/robust_context.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/robust_context.py",
+      "source_sha256": "fa30d159672af79c842010000915e1e3999ab58c5e769c230cc3ebf367fba9b7",
+      "reading_sha256": "901c80a2e521f24a7bfd42b24354da7a5fa53744d366e60947df16dd1d2ea853",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/robust_data.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/robust_data.py",
+      "source_sha256": "c1c2f10cfcb1ea5cb90511c21624bc9620711ab419e44883adc6dea695f20741",
+      "reading_sha256": "61c7b9d39e796251b0eef2edc62aa707d3f4b3e167b8a7de8ecefb1ddbe69c42",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/robust_evaluation.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/robust_evaluation.py",
+      "source_sha256": "8a89bb72d0c9bf8830ad71979e29c54b97e879d7ff1504683769ce1abf3372e4",
+      "reading_sha256": "7459c71d4a682a8246235477bc2f872f29f3e2a0b4e3c86855c980f9bb5587df",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/robust_models.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/robust_models.py",
+      "source_sha256": "69c75b8cb4bb28363d228fceec318e57a69067290ef09ff59a211a420aefbc7f",
+      "reading_sha256": "a58fc60e1a2bb6d082e8d81b39753c107ca30e4f14fbeabcf61a625b43f05e68",
+      "added_logic_comment_lines": 14,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/robust_training.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/robust_training.py",
+      "source_sha256": "0e66d948e9f55e57e8a1025ad5264b9cd045bf5de74bd687a12fe8afa79258d5",
+      "reading_sha256": "ad73fde6ac0a33770f79270989974a47796fc95f8c327bd1ad6d503975cc557b",
+      "added_logic_comment_lines": 4,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/summarize_analysis.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/summarize_analysis.py",
+      "source_sha256": "9abb635fd7eb7763a2e659f3f518c1a1cc5e21872ccf9298956a13daad5b1ef5",
+      "reading_sha256": "95b808668449a4beda721f7d08dac97c9c5a3128f59a1fd19e9a289880bc3961",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/train.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/train.py",
+      "source_sha256": "fd0378dff95d602d764be73f05988dfde98299e09352f4b0bbecfff21ba26611",
+      "reading_sha256": "a413a74b39303ada4db9593c7a0e4a85973afe6818a4f3237c3a3341ee68ca75",
+      "added_logic_comment_lines": 8,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/train_ablations.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/train_ablations.py",
+      "source_sha256": "9a6089a7bfebfdebb1f5a794aa1852cfa84ae4f4fca5dd05190c2e2b3409e7ad",
+      "reading_sha256": "1c38093cbfbfba89b0257a923deb43b8fe6e6e0dea49f90192015a7a04bd759a",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/train_missingness_smoke.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/train_missingness_smoke.py",
+      "source_sha256": "886f6700d621057b54a807730065a1403d9251253d5e842f1024f0f3400d3f40",
+      "reading_sha256": "12984fb046367a0c4a34548dd9930572b7f533436ea76ff097f94a98d9df81e9",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/train_robust.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/train_robust.py",
+      "source_sha256": "563e4477a802349a6a489680cf34b183a63a7c9693726997730834e119be85a8",
+      "reading_sha256": "49d6d73a065ec27f2dffba661c9c35ee6f9b00998c79293fea8ee0dab1c5a0f7",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/validate_analysis.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/validate_analysis.py",
+      "source_sha256": "c17888ee351ec0fd4fb9850029e5e073759d1faf68bca3edbcb9dd166b35352c",
+      "reading_sha256": "c1d91c3b97eb7bd64ddf470f18d73dfb90303c39e88584360868ee2898405fc6",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/validate_delivery.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/validate_delivery.py",
+      "source_sha256": "39b6dfdf223ca392a5db41bf2a84e8e53694b7358d1290b6a9c3182e9cefcf52",
+      "reading_sha256": "c0de176ba242361382d23c71a7030b6e73cd23d8e234594d0cef0d831b2371ad",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/validate_missingness.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/validate_missingness.py",
+      "source_sha256": "35232de81c913125cb8144215a60364cf3ccbc2d4952c51129debeb5b9ce88f7",
+      "reading_sha256": "9e7edbc5fb0454af0fcc2b4cf3b8354cebed6fa593c293931a2b5dc4259a09bb",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/validate_outputs.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/validate_outputs.py",
+      "source_sha256": "9ab7488802ba17cb2ffcf245dcc096f2093da14979809c71cdbd6f55979c4a48",
+      "reading_sha256": "9c2d88251148e87cbd3dd48ee19fafd9c8363dc505414866e67d11f631115ec3",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    },
+    {
+      "source": "questions/problem3_explainability/vendor/p2/src/validate_robust.py",
+      "reading": "questions/problem3_explainability/vendor/p2/src/validate_robust.py",
+      "source_sha256": "6bf7899241595e178d72ce85615f6eae28bf42e1e85cf3921ee801a189cf1d25",
+      "reading_sha256": "4390898cc2ab015a6463b01fbb3102021f61096e52b33ed10409398ffc1ccf28",
+      "added_logic_comment_lines": 0,
+      "ast_identical": true,
+      "tokens_identical": true
+    }
+  ]
+}
